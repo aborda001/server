@@ -3,7 +3,7 @@ const router = Router();
 
 import * as rolesController from "../controllers/roles.controller";
 
-//routes /api/alumnos
+//routes /api/roles
 router.post("/", rolesController.createRole);
 router.get("/", rolesController.getRoles);
 router.get("/:id", rolesController.getRoleById);
