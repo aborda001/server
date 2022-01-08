@@ -7,7 +7,7 @@ export const createRole = async(req, res) => {
         INSERT INTO Roles 
         (nombre_rol)
         VALUES
-        ('${nombre_rol}')
+        ('${nombre_rol}');
         `;
         const newRole = await client.query(querySql);
         res.json({
@@ -22,7 +22,15 @@ export const createRole = async(req, res) => {
 }
 
 export const getRoles = async(req, res) => {
-    
+    try {
+        const querySql ="SELECT * FROM Roles;";
+        const allRoles = await client.query(querySql);
+        res.json(allRoles.rows);
+    } catch (error) {
+        res.status(500).json({
+            "error" : error.detail
+        });
+    }
 }
 
 export const getRoleById = async(req, res) => {
