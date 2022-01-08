@@ -67,9 +67,9 @@ export const updateUsuarioById = async(req, res) => {
             id_persona = '${id_persona}'
         WHERE id_usuario = '${id}';
         `;
-        const usuario = await client.query(querySql);
+        const usuariodb = await client.query(querySql);
         
-        if ( usuario.rowCount == 0 ) {
+        if ( usuariodb.rowCount == 0 ) {
             return res.status(404).json({
                 message : "Usuario not found"
             });
