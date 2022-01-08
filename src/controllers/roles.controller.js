@@ -62,9 +62,9 @@ export const updateRoleById = async(req, res) => {
             nombre_rol = '${nombre_rol}'
         WHERE id_rol = '${id}';
         `;
-        const student = await client.query(querySql);
+        const roles = await client.query(querySql);
         
-        if ( student.rowCount == 0 ) {
+        if ( roles.rowCount == 0 ) {
             return res.status(404).json({
                 message : "Role not found"
             });
