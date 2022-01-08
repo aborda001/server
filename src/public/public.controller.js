@@ -34,7 +34,6 @@ export const signupUser = async(req, res) => {
 
         querySql = "SELECT id_persona FROM Personas ORDER BY id_persona DESC LIMIT 1"
         const ultimaPersona = await (await client.query(querySql)).rows[0].id_persona;
-        console.log(ultimaPersona);
         querySql = `
         INSERT INTO Usuarios 
         (usuario, password, id_rol, fecha_usuario, id_persona)

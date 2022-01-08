@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 
-import * as publicController from "../controllers/public.controller"
+import * as publicController from "../public/public.controller"
 
 router.get("/home", publicController.home);
 router.get("/signup", publicController.signup);
