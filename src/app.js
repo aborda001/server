@@ -24,6 +24,9 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.get("/", (req, res) => {
+    res.redirect("/home");
+});
 //public routes
 app.use("/", publicRoutes);
 
